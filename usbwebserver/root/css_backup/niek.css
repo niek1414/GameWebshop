@@ -1,0 +1,124 @@
+
+/* ==================== Niek CSS ====================*/
+
+.content-title{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+}
+.content-title-cart {
+	width: 89%;
+}
+
+.text-title {
+	padding: 170px 20px 0 20px;
+	text-align: left;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.text-title-right{
+	padding: 20px 20px 0 20px;
+	text-align: left;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.text-main{
+	float: left;
+	width: 700px;
+	margin-top: 20px;
+	padding: 20px 20px 0 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.text-main-right{
+	float: right;
+	width: 750px;
+	padding: 40px 0 0 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.text-main-small{
+	width: 400px;
+}
+
+.imagebox-left{
+	float: left;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+}
+.imagebox-right{
+	float: right;
+}
+
+.bordercollapse {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.register-text-normal {
+	text-align: left;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.accountdata-table {
+	width: 30%;
+}
+
+.full-table {
+	width:100%;
+    border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.half-table {
+	width: 50%;
+	float: right;
+    border: none;
+	border-collapse: collapse;
+}
+
+th {
+	line-height: 30px;
+	font-weight: 500;
+	text-align: center;
+	width: 10%;
+}
+
+td {
+	font-weight:bold;
+	text-align:center;
+	width: 10%;
+}
+
+.invisible-cell {
+	border: none;
+}
+
+#button-head{
+	padding-top: 20px;
+	padding-left: 1%;
+	float: left;
+}
+
+#button-send{
+	margin: 20px;
+	float: right;
+}
+
+#content-footer-wraper{
+	margin: 20px;
+	float: right;
+}
+
+.inner-table {
+	margin: 10px;
+}

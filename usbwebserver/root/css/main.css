@@ -1,0 +1,517 @@
+/*
+##########################################
+##										##
+##  	MAIN							##
+##										##
+##########################################
+*/
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: url("../img/background.gif");
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+}
+
+.clearfix:after {
+	clear: both;
+	content: " ";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+#container {
+	background-color: #514F50;
+	width:1200px;
+	margin: 0 auto;
+}
+
+#left-wrapper {
+	float: left;
+	width: 80%;
+	-webkit-box-shadow: 0 0 10px 0px #AEAEAE;
+	-moz-box-shadow: 0 0 10px 0px #AEAEAE;
+	box-shadow: 0 0 10px 0px #AEAEAE;
+}
+
+#right-wrapper {
+	float: left;
+	width: 20%;
+	height: 600px;
+}
+
+#advert {
+	height: 400px;
+	margin: 20px;
+	background: url("../img/mk7_ad.png");
+	background-size: 100% 100%;
+}
+
+#header {
+	height: 100px;
+}
+
+#logo {
+	float: left;
+	background: url(../img/bg_logo.png);
+	background-color: #007FBF;
+	width: 60%;
+	height: 100%;
+}
+
+#main {
+	float: left;
+	width: 100%;
+}
+
+#content {
+	min-height: 500px;
+	background-color: #FFFFFF;
+	width: 100%;
+}
+
+/*
+##########################################
+##  	LOGIN							##
+##########################################
+*/
+#login-wrapper {
+	padding: 10px;
+	color: #007FBF;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.signright{
+	margin-bottom: 10px;
+	float: left;
+	width: 50%;
+}
+
+.signleft{
+	margin-bottom: 10px;
+	float: left;
+	width: 50%;
+}
+
+#login{
+	background-color: #FFFFFF;
+	float: left;
+	width: 40%;
+	height: 100%;
+}
+	#login input[type="text"] {
+		width: 100%;
+	}
+
+	#login-button{
+		width: 50%;
+	}
+	
+	#login a {
+		font-weight: bold;
+		color: #007FBF;
+	}
+		#login a:hover{
+			color: #FF8040;
+		}
+
+/*
+##########################################
+##  	NAVIGATION						##
+##########################################
+*/
+#navbar {
+	font-weight: bold;
+    text-align: center;
+	background: url("../img/bg_navbar.gif");
+	background-repeat: repeat-x;
+	line-height:38px;
+	width: 100%;
+}
+	#navbar a {
+		color: white;
+		text-decoration: none;
+		display: block;
+	}
+	#navbar ul {
+		list-style:none;
+	}
+	#navbar li {
+		float:left;
+		position:relative;
+		display:block;
+		-webkit-box-shadow: inset 0 0 2px 0px #CCCCCC;
+		-moz-box-shadow: inset 0 0 2px 0px #CCCCCC;
+		box-shadow: inset 0 0 2px 0px #CCCCCC;
+		width: 20%;
+		
+	}
+		#navbar li:hover {
+			background: url("../img/bg_navbar_inv.gif");
+		}
+		#navbar li ul {
+			display:none;
+			position:absolute;
+			width: 100%
+		}
+			#navbar li:hover ul {
+				background-color: #0080C0;
+				display:block;
+			}
+			#navbar li ul li {
+				width: 100%;
+			}
+				#navbar li ul li:last-child{
+					background: url("../img/bg_navbar.gif");
+				}
+				#navbar li ul li:hover {
+					background: url("../img/bg_navbar_subdown.gif");
+				}
+				
+/*
+##########################################
+##  	FOOTER							##
+##########################################
+*/				
+#footer {
+	color: white;
+	text-align: center;
+	float: left;
+	background: url("../img/bg_footer.gif");
+	line-height: 38px;
+	width: 100%;
+	/*position: fixed;
+	bottom: 0;*/
+}
+	#footer a {
+		color: white;
+		text-decoration: none;
+	}
+	#footer > ul {
+		list-style-type: none;
+	}
+		#footer > ul li {
+			display: inline;
+		}
+
+/*
+##########################################
+##  									##
+##  	CONTENT							##
+##  									##
+##########################################
+*/
+/*
+##########################################
+##  	PRODUCTS PAGE					##
+##########################################
+*/
+#search-wrapper {
+	margin: 10px 0 10px 0;
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+#sorter {
+	width: 100%;
+	float: left;
+	line-height: 20px;
+}
+	#sorter p {
+		float: left;
+		padding: 0 10px 0 10px;
+	}
+	#sorter select {
+		float: left;
+	}
+
+#submenu {
+	width: 20%;
+	float: left;
+}
+
+#subcategories {
+	width: 100%;
+	margin-top: 30px;
+}
+	#subcategories ul {
+		margin: 10px;
+		padding: 10px 0 10px;
+		list-style-type: none;
+		border: thin solid #AEAEAE;
+	}
+		#subcategories ul li {
+			padding: 0 10px 0 10px;
+		}
+
+#products {
+	width: 80%;
+	float: left;
+}
+/*
+##########################################
+##  	PRODUCTBOX						##
+##########################################
+*/
+.productbox {
+	margin: 10px;
+	float: left;
+	width: 200px;
+}
+	.productbox a {
+		color: white;
+		text-decoration: none;
+	}
+
+.productbox-head {
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	background: url("../img/bg_productbox.gif");
+	background-repeat: repeat-x;
+	line-height: 24px;
+	-webkit-border-top-left-radius: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-topright: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.productbox-main {
+	width: 200px;
+	height: 200px;
+}
+
+.productbox-foot {
+	background-color: #DDDDDD;
+	float: left;
+	padding: 5px 0 5px 0;
+	width: 100%;
+}
+
+.pricetext {
+	float: left;
+	padding-left: 5px;
+}
+
+.cartbutton {
+	float: right;
+	padding-right: 5px;
+}
+
+/*
+##########################################
+##  	PRODUCT DETAILS					##
+##########################################
+*/
+#back {
+	float: left;
+	width: 100%;
+	padding: 10px 0 10px 0;
+}
+
+#back-button {
+	margin: 0 10px 0 10px;
+	width: 10%;
+}
+
+#product-wrapper {
+	float: left;
+	width: 100%;
+}
+
+#product-image {
+	float: left;
+	width: 40%;
+}
+	#product-image img {
+		border: thin solid #AEAEAE;
+		margin: 10px;
+	}
+
+#product-details {
+	float: left;
+	width: 40%;
+	padding-top: 10px;
+    text-align: justify;
+}
+
+#stock {
+	float: left;
+	width: 20%;
+	padding-top: 10px;
+}
+	#stock p {
+		padding-left: 10px;
+	}
+
+#cart {
+	float: left;
+	width: 100%;
+	margin-left: 40%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+	#cart p {
+		float: left;
+	}
+
+#related-wrapper {
+	float: left;
+	width: 100%;
+}
+
+#related-text {
+	font-weight: bold;
+	Margin-left: 10px;
+}
+
+/*
+##########################################
+##  	TEXT FIELDS						##
+##########################################
+*/
+.content-title{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+}
+.content-title-cart {
+	width: 89%;
+}
+
+.text-title {
+	padding: 170px 20px 0 20px;
+	text-align: left;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.text-title-right{
+	padding: 20px 20px 0 20px;
+	text-align: left;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.text-main{
+	float: left;
+	width: 700px;
+	margin-top: 20px;
+	padding: 20px 20px 0 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.text-main-right{
+	float: right;
+	width: 750px;
+	padding: 40px 0 0 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.text-main-small{
+	width: 400px;
+}
+
+.register-text-normal {
+	text-align: left;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+/*
+##########################################
+##  	IMAGEBOXES						##
+##########################################
+*/
+.imagebox-left{
+	float: left;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+}
+.imagebox-right{
+	float: right;
+}
+
+/*
+##########################################
+##  	TABLES							##
+##########################################
+*/
+.bordercollapse {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.full-table {
+	width:100%;
+    border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.half-table {
+	width: 50%;
+	float: right;
+    border: none;
+	border-collapse: collapse;
+}
+
+.inner-table {
+	margin: 10px;
+}
+
+.input-right input[type="text"], input[type="email"] {
+	width: 100%;
+}
+
+th {
+	line-height: 30px;
+	font-weight: 500;
+	text-align: center;
+	width: 10%;
+}
+
+td {
+	font-weight:bold;
+	text-align:center;
+	width: 10%;
+}
+
+.invisible-cell {
+	border: none;
+}
+
+/*
+##########################################
+##  	CART BUTTONS					##
+##########################################
+*/
+#button-head{
+	padding-top: 20px;
+	padding-left: 1%;
+	float: left;
+}
+
+#button-send{
+	margin: 20px;
+	float: right;
+}
+
+#content-footer-wrapper{
+	margin: 20px;
+	float: right;
+}

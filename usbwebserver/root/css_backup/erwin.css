@@ -1,0 +1,162 @@
+/* ===== Erwin CSS =====*/
+
+#search-wrapper {
+	margin: 10px 0 10px 0;
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+#sorter {
+	width: 100%;
+	float: left;
+	line-height: 20px;
+}
+
+#sorter p {
+	float: left;
+	padding: 0 10px 0 10px;
+}
+
+#sorter select {
+	float: left;
+}
+
+#submenu {
+	width: 20%;
+	float: left;
+}
+
+#subcategories {
+	width: 100%;
+	margin-top: 30px;
+}
+
+#subcategories ul {
+	margin: 10px;
+	padding: 10px 0 10px;
+	list-style-type: none;
+	border: thin solid #AEAEAE;
+}
+
+#subcategories ul li {
+	padding: 0 10px 0 10px;
+}
+
+#products {
+	width: 80%;
+	float: left;
+}
+
+.productbox {
+	margin: 10px;
+	float: left;
+	width: 200px;
+}
+
+.productbox a {
+	color: white;
+	text-decoration: none;
+}
+
+.productbox-head {
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	background: url("../img/bg_productbox.gif");
+	background-repeat: repeat-x;
+	line-height: 24px;
+	-webkit-border-top-left-radius: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-topright: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.productbox-main {
+	width: 200px;
+	height: 200px;
+}
+
+.productbox-foot {
+	background-color: #DDDDDD;
+	float: left;
+	padding: 5px 0 5px 0;
+	width: 100%;
+}
+
+.pricetext {
+	float: left;
+	padding-left: 5px;
+}
+
+.cartbutton {
+	float: right;
+	padding-right: 5px;
+}
+
+#back {
+	float: left;
+	width: 100%;
+	padding: 10px 0 10px 0;
+}
+
+#back-button {
+	margin: 0 10px 0 10px;
+	width: 10%;
+}
+
+#product-wrapper {
+	float: left;
+	width: 100%;
+}
+
+#product-image {
+	float: left;
+	width: 40%;
+}
+
+#product-image img {
+	border: thin solid #AEAEAE;
+	margin: 10px;
+}
+
+#product-details {
+	float: left;
+	width: 40%;
+	padding-top: 10px;
+    text-align: justify;
+}
+
+#stock {
+	float: left;
+	width: 20%;
+	padding-top: 10px;
+}
+
+#stock p {
+	padding-left: 10px;
+}
+
+#cart {
+	float: left;
+	width: 100%;
+	margin-left: 40%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#cart p {
+	float: left;
+}
+
+#related-wrapper {
+	float: left;
+	width: 100%;
+}
+
+#related-text {
+	font-weight: bold;
+	Margin-left: 10px;
+}
