@@ -1,9 +1,9 @@
 <?php 
 	include('templates/header.php');
+	include('functions/sign_up.php');
 ?>
-
 <div id="content" class="clearfix">
-	<form action="TEST.asp" method="get">
+	<form action="#" method="post">
 	<p class="content-title">Registreren</p>
 	<div class="inner-table">
 	<p>Vul hieronder uw gegevens in.</p>
@@ -27,7 +27,7 @@
 						</tr>
 						<tr>
 							<td class="register-text-normal">
-								<input name="username" type="text" size="30">
+								<input name="username" type="text" size="30" required>
 							</td>
 						</tr>
 						<tr>
@@ -37,7 +37,7 @@
 						</tr>
 						<tr>
 							<td class="register-text-normal">
-								<input name="password" type="text" size="30">
+								<input name="password" type="password" size="30" required>
 							</td>
 						</tr>
 						<tr>
@@ -47,7 +47,7 @@
 						</tr>
 						<tr>
 							<td class="register-text-normal">
-								<input name="sec_password" type="password" size="30">
+								<input name="sec_password" type="password" size="30" required>
 							</td>
 						</tr>
 					</table>
@@ -72,19 +72,19 @@
 						</tr>
 						<tr>
 							<td class="register-text-normal">
-								<select>
+								<select name="sexe">
 									<option value="M">Dhr</option>
 									<option value="V">Mevr</option>
 								</select>
 							</td>
 							<td class="register-text-normal">
-								<input type="text" name="firstname">
+								<input type="text" name="firstname" required>
 							</td>
 							<td class="register-text-normal">
 								<input name="middlename" type="text" size="10">
 							</td>
 							<td class="register-text-normal">
-								<input type="text" name="lastname">
+								<input type="text" name="lastname" required>
 							</td>
 						</tr>
 						<tr>
@@ -94,7 +94,7 @@
 						</tr>
 						<tr>
 							<td colspan="2" class="register-text-normal">
-								<input name="email" type="email">
+								<input name="email" type="email" required>
 							</td>
 							<td colspan="2">
 							</td>
@@ -112,13 +112,13 @@
 						</tr>
 						<tr>
 							<td colspan="2" class="register-text-normal">
-								<input name="streetname" type="text" size="35">
+								<input name="streetname" type="text" size="35" required>
 							</td>
 							<td>
 								
 							</td>
 							<td class="register-text-normal">
-								<input name="house_number" type="text" size="10">
+								<input name="house_number" type="nummer" size="10" required>
 							</td>
 						</tr>
 						<tr>
@@ -134,13 +134,13 @@
 						</tr>
 						<tr>
 							<td colspan="2" class="register-text-normal">
-								<input name="zipcode" type="text" size="35">
+								<input name="zipcode" type="text" size="35" required>
 							</td>
 							<td>
 								
 							</td>
 							<td class="register-text-normal">
-								<input name="city" type="text">
+								<input name="city" type="text" required>
 							</td>
 						</tr>
 						<tr>
@@ -150,7 +150,7 @@
 						</tr>
 						<tr>
 							<td colspan="2" class="register-text-normal">
-								<input name="mobiel" type="text">
+								<input name="mobiel" type="text" required>
 							</td>
 							<td colspan="2">
 							</td>
@@ -162,7 +162,7 @@
 		
 	</table>
 	</div>
-	<input id="button-send" value="Aanmelden" type="submit" >
+	<input id="button-send" value="Aanmelden" name="action" type="submit" >
 	</form>
 </div>
 

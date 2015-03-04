@@ -15,7 +15,7 @@
 			case 'Log in': {
 				
 				$username = $_POST['username'];
-				$password = $_POST['password'];
+				$password = md5($_POST['password']);
 				
 				// connection
 				$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
