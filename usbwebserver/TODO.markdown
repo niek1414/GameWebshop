@@ -1,4 +1,4 @@
-- [ ] login wachtwoordveld in astriks.
+- [x] login wachtwoordveld in astriks.
 - [ ] login form --> table (ipv div)
 - [ ] log uit form maken en inpementeren.
 - [ ] remember?
