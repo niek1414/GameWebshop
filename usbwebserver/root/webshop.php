@@ -1,116 +1,112 @@
 <?php 
 	include('templates/header.php');
+	
+	// connection
+	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
 ?>
 
 <div id="content" class="clearfix">
 		<div id="search-wrapper">
-			<form action="TEST.asp" method="get">
-				<input type="text" name="searchtext">
+			<form method="get">
+                <?php if (isset($_GET['cat']) && is_numeric($_GET['cat'])) {
+					echo('<input type="hidden" name ="cat" value="' .$_GET['cat']. '">');
+				} ?>
+				<input type="text" name="search">
 				<input type="submit" value="Zoek">
 			</form>
 		</div>
 		<div id="submenu">
 			<div id="subcategories">
 				<ul>
-				<li><a href="#">Subcategorie 1</a></li>
-				<li><a href="#">Subcategorie 2</a></li>
-				<li><a href="#">Subcategorie 3</a></li>
-				<li><a href="#">Subcategorie 4</a></li>
-				<li><a href="#">Subcategorie 5</a></li>
+                <?php
+					// query to get categories
+					$query = "SELECT * FROM categorie" or die("Error in the query.." . mysqli_error($link)); 
+				
+					//execute the query. 
+					$result = mysqli_query($link, $query);
+					
+					// show categories
+					echo('<li><a href="./webshop.php">Alles</a></li>');
+					while($row = mysqli_fetch_array($result)) { 
+						echo('<li><a href="?cat='.$row["CATEGORIENUMMER"]. '">'.$row["CATEGORIENAAM"]. '</a></li>');
+					}
+				?>
 				</ul>
 			</div>
 		</div>
 		<div id="products">
-			<div id="sorter">
-				<p>9001 Producten | toon</p>
-				<select>
-					<option value="20">20</option>
-					<option value="50">50</option>
-					<option value="100">100</option>
-					<option value="200">200</option>
-				</select>
-				<p>per pagina</p>
-			</div>
+            
+            <?php
+				// build query to get products
+				$query = "SELECT * FROM product ";
+				if (isset($_GET['cat']) && is_numeric($_GET['cat'])) {
+					$query .= "WHERE CATEGORIE = " .$_GET['cat']. " ";
+				}
+				if (isset($_GET['search']) && mysqli_real_escape_string($link, $_GET['search'])) {
+					if (isset($_GET['cat'])) {
+						$query .= "AND PRODUCTNAAM LIKE '%" .$_GET['search']. "%' ";
+					} else {
+						$query .= "WHERE PRODUCTNAAM LIKE '%" .$_GET['search']. "%' ";
+					}
+				}
+				if (isset($_GET['sort']) && is_numeric($_GET['sort'])) {
+					$query .= "LIMIT " .$_GET['sort']." ";
+				}
+				
+				// execute the query. 
+				$result = mysqli_query($link, $query); 
+				
+				if (mysqli_num_rows($result) > 0) {
+					// sorter
+					echo('<div id="sorter">');
+					echo('<p>'.mysqli_num_rows($result).' Producten | toon</p>');
+					echo('<form method="get">');
+					
+					if (isset($_GET['cat']) && is_numeric($_GET['cat'])) {
+						echo('<input type="hidden" name ="cat" value="' .$_GET['cat']. '">');
+					}
+					if (isset($_GET['search']) && mysqli_real_escape_string($link, $_GET['search'])) {
+						echo('<input type="hidden" name ="search" value="' .$_GET['search']. '">');
+					}
+					echo('<select name="sort">');
+					echo('<option value="3">3</option>');
+					echo('<option value="50">50</option>');
+					echo('<option value="100">100</option>');
+					echo('<option value="200">200</option>');
+					echo('</select>');
+					echo('<p>per pagina</p>');
+					echo('<input type="submit" value="Toon">');
+					echo('</form>');
+					echo('</div>');
+					
+					// productboxes
+					while($row = mysqli_fetch_array($result)) { 
+						echo('<div class="productbox">');
+						echo('<div class="productbox-head">');
+						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>');
+						echo('</div>');
+						echo('<div class="productbox-main">');
+						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" width="200" height="200"></a>');
+						echo('</div>');
+						echo('<div class="productbox-foot">');
+						echo('<p class="pricetext">€ ' .$row["PRIJS"]. '</p>');
+						echo('<form class="cartbutton" action="#" method="post">');
+						echo('<input type="submit" name="action" value="In Winkelwagen">');
+						echo('</form>');
+						echo('</div>');
+						echo('</div>');
+					}
+				} else {
+					echo('<p>Deze categorie is leeg.<p>');
+				}
 			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.php">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.php"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.php">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.php"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.php">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.php"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.php">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.php"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.php">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.php"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
+			?>
 			
 		</div>
 </div>
 
-<?php 
+<?php
+	mysqli_close($link);
+	
 	include('templates/footer.php');
 ?>

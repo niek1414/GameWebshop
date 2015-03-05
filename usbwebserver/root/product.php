@@ -1,29 +1,43 @@
 <?php 
 	include('templates/header.php');
+	
+	// connection
+	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
 ?>
 
 <div id="content" class="clearfix">
 	<div id="back">
-		<form action="TEST.asp" method="get">
-			<input id="back-button" type="submit" value="Terug">
-		</form>
+		<input id="back-button" type="button" value="Terug" onclick="location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'">
 	</div>
-	<div id="product-wrapper">
-		<div id="product-image">
-			<img src="img/sm3dl.jpg" alt="image" width="300">
-		</div>
-		<div id="product-details">
-			<P>
-				Bacon ipsum dolor amet flank bacon drumstick filet mignon.
-				Turkey salami pork belly picanha pork chop tail brisket tongue kielbasa prosciutto landjaeger pastrami.
-				Bresaola cow prosciutto ribeye spare ribs pig flank kevin andouille shank ham hock drumstick rump ham.
-				Meatball frankfurter ham chuck.
-			</p>
-		</div>
-		<div id="stock">
-			<p>Op voorraad: Myess</P>
-		</div>
-	</div>
+    <?php 
+		if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+			// query
+			$query = "SELECT * FROM product WHERE PRODUCTNUMMER = ".$_GET['id'];
+			
+			// execute the query. 
+			$result = mysqli_query($link, $query); 
+			
+			if (mysqli_num_rows($result) == 1) {
+				$row = mysqli_fetch_array($result);
+				
+				echo('<div id="product-wrapper">');
+				echo('<div id="product-image">');
+				echo('<img src="'.$row['AFBEELDING_GROOT'].'" alt="'.$row['PRODUCTNAAM'].'" width="300">');
+				echo('</div>');
+				echo('<div id="product-details">');
+				echo('<P>'.$row['OMSCHRIJVING'].'</p>');
+				echo('</div>');
+				echo('<div id="stock">');
+				echo('<p>Voorraad: '.$row['VOORRAAD'].'</P>');
+				echo('</div>');
+				echo('</div>');
+			} else {
+				echo('<P>Dit product bestaat niet of bevindt zich niet langer in ons systeem.</p>');
+			}
+		} else {
+			echo('<P>Ongeldig product!</p>');
+		}
+	?>
 	<div id="cart">
 		<p>Aantal: </P>
 		<form class="tocart" action="TEST.asp" method="get">
@@ -100,5 +114,7 @@
 </div>
 
 <?php 
+	mysqli_close($link);
+	
 	include('templates/footer.php');
 ?>
