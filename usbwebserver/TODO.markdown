@@ -17,3 +17,4 @@
 	- [ ] producten informatie printen
 	- [ ] gerelateerde producten printen
 - [ ] gebruik database voor pagina verwijzing???
+- [ ] fix sorter div in webshoppagina (duwt hele pagina naar rechts).
