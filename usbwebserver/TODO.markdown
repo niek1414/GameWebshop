@@ -4,6 +4,7 @@
 - [ ] log uit form maken en inpementeren.
 - [ ] remember?
 - [ ] bevestiging voor regisreren.
+
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [ ] webshop
 	- [ ] categorieën uitput
