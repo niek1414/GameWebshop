@@ -83,20 +83,6 @@ body {
 #login-wrapper {
 	padding: 10px;
 	color: #007FBF;
-	font-weight: bold;
-	font-size: 12px;
-}
-
-.signright{
-	margin-bottom: 10px;
-	float: left;
-	width: 50%;
-}
-
-.signleft{
-	margin-bottom: 10px;
-	float: left;
-	width: 50%;
 }
 
 #login{
@@ -104,16 +90,51 @@ body {
 	float: left;
 	width: 40%;
 	height: 100%;
-}
+	font-size: 10px;
+	font-weight: bold;
+	}
+	
 	#login input[type="text"] {
-		width: 100%;
+		width: 13em;   
+	}
+	#login input[type="password"] {
+		width: 13em;   
 	}
 
 	#login-button{
 		width: 50%;
 	}
 	
+	#logout-button{
+		width: 25%;
+		float: right;
+	}
+	
+	#login tr {
+		padding-top: 5px;
+		font-size: 12px;
+		font-weight: bold;
+		color: #007FBF;
+		text-align: left;
+	}
+	
+	#login td {
+		padding-top: 5px;
+		text-align: left;
+	}
+	
+	#login-name {
+		font-size: 14px;
+		font-weight: bold;
+		color: #FF8040;
+	}
+	
+	.login-first-row{
+		width: 60%;
+	}
+
 	#login a {
+		font-size: 12px;
 		font-weight: bold;
 		color: #007FBF;
 	}

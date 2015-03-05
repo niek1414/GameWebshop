@@ -18,19 +18,9 @@
 					<div id="login">
 					<div id="login-wrapper">
 						<form action="#" method="post">
-							<div class="signleft">Gebruikersnaam</div>
-							<div class="signright"><input type="text" name="username"></div>
-							<div class="signleft">Wachtwoord</div>
-							<div class="signright"><input type="text" name="password"></div>
-							<div class="signleft">
-								<input type="checkbox" name="remember" value="true"> Onthouden 
-								
-								<a href="./forgot.html">Vergeten?</a>
-							</div>
-							<div class="signright">
-								<input id="login-button" type="submit" name="action" value="Log in">
-								<a href="./register.php">Registreren</a>
-							</div>
+                            <?php
+								include('templates/login_form.php')
+							?>
 						</form>
 						</div>
 					</div>

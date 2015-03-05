@@ -21,7 +21,7 @@
 				$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
 				
 				// query
-				$query = "SELECT COUNT(*) as SUCCESS FROM gebruiker
+				$query = "SELECT * FROM gebruiker
 				  WHERE GEBRUIKERSNAAM = '" . $username . "'
 				  AND WACHTWOORD = '" . $password . "'"
 				  or die("Error in the query.." . mysqli_error($link)); 
@@ -33,19 +33,24 @@
 				$data=mysqli_fetch_assoc($result);
 				
 				// check result
-				if ($data['SUCCESS'] == 1) {
+				if (mysqli_num_rows($result) == 1) {
 					echo "Successfully logged in!";
-					$_SESSION['loggedIn'] = true;
-					$_SESSION['username'] = $username;
-					$_SESSION['password'] = $password;
+					$_SESSION['loggedIn']	= true;
+					$_SESSION['username'] 	= $username;
+					$_SESSION['password'] 	= $password;
+					$_SESSION['firstname'] 	= $data['VOORNAAM'];
+					$_SESSION['middlename'] = $data['TUSSENVOEGSEL'];
+					$_SESSION['lastname'] 	= $data['ACHTERNAAM'];
 					echo '<br>Username: ' . $_SESSION['username'];
 				} else {
 					echo "<script type='text/javascript'>alert('Login failed!')</script>";
 				}
 				
 			} break;
-			case 'Log out': {
+			case 'Log uit': {
 				session_destroy();
+				Header('Location: '.$_SERVER['PHP_SELF']);
+				Exit();
 				echo "Just logged out";
 			} break;
 		}
