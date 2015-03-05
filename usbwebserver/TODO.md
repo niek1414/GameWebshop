@@ -4,9 +4,9 @@
 -remember?
 -bevestiging voor regisreren.
 -webshop
-	categorieën uitput
+	categorieÃ«n uitput
 	producten
-	producten printen op basis van categorieën
+	producten printen op basis van categorieÃ«n
 	resultaten per pagina
 	zoek functie
 -productpagina
