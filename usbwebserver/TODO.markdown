@@ -16,3 +16,4 @@
 - [ ] terug button maken
 	- [ ] producten informatie printen
 	- [ ] gerelateerde producten printen
+- [ ] gebruik database voor pagina verwijzing???
