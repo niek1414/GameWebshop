@@ -1,6 +1,6 @@
-- [x] login wachtwoordveld in astriks.
-- [ ] login form --> table (ipv div)
-- [ ] log uit form maken en inpementeren.
+- [ ] login wachtwoordveld in astriks. ![alt text](https://avatars0.githubusercontent.com/u/11294766?v=3&s=40)
+- [ ] login form --> table (ipv div)![alt text](https://avatars0.githubusercontent.com/u/11294766?v=3&s=40)
+- [ ] log uit form maken en inpementeren.![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [ ] remember?
 - [ ] bevestiging voor regisreren.
 - [ ] webshop
