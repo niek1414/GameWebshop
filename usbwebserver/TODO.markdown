@@ -3,7 +3,7 @@
 - [x] login form --> table (ipv div)
 - [x] log uit form maken en inpementeren.
 - [ ] remember?
-- [ ] bevestiging voor regisreren.
+- [x] bevestiging voor regisreren.
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
