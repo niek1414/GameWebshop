@@ -5,10 +5,10 @@
 	if($_SERVER['REQUEST_METHOD'] == 'GET') {
 		// check session
 		if (isset($_SESSION['loggedIn'])) {
-			echo "Logged in";
-			echo '<br>Username: ' . $_SESSION['username'];
+			//echo "Logged in";
+			//echo '<br>Username: ' . $_SESSION['username'];
 		} else {
-			echo "Not logged in";
+			//echo "Not logged in";
 		}
 	} else {
 		switch($_POST['action']) {
@@ -34,24 +34,23 @@
 				
 				// check result
 				if (mysqli_num_rows($result) == 1) {
-					echo "Successfully logged in!";
+					//echo "Successfully logged in!";
 					$_SESSION['loggedIn']	= true;
 					$_SESSION['username'] 	= $username;
 					$_SESSION['password'] 	= $password;
 					$_SESSION['firstname'] 	= $data['VOORNAAM'];
 					$_SESSION['middlename'] = $data['TUSSENVOEGSEL'];
 					$_SESSION['lastname'] 	= $data['ACHTERNAAM'];
-					echo '<br>Username: ' . $_SESSION['username'];
+					//echo '<br>Username: ' . $_SESSION['username'];
 				} else {
 					echo "<script type='text/javascript'>alert('Login failed!')</script>";
 				}
 				
 			} break;
 			case 'Log uit': {
+				session_unset();
 				session_destroy();
-				Header('Location: '.$_SERVER['PHP_SELF']);
-				Exit();
-				echo "Just logged out";
+				//echo "Just logged out";
 			} break;
 		}
 	}

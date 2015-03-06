@@ -25,12 +25,56 @@
 				echo('<img src="'.$row['AFBEELDING_GROOT'].'" alt="'.$row['PRODUCTNAAM'].'" width="300">');
 				echo('</div>');
 				echo('<div id="product-details">');
-				echo('<P>'.$row['OMSCHRIJVING'].'</p>');
+				echo('<P>'.utf8_encode($row['OMSCHRIJVING']).'</p>');
 				echo('</div>');
 				echo('<div id="stock">');
 				echo('<p>Voorraad: '.$row['VOORRAAD'].'</P>');
 				echo('</div>');
 				echo('</div>');
+				
+				echo('<div id="cart">
+					<p>Aantal: </P>
+					<form class="tocart" action="TEST.asp" method="get">
+						<input type="text" name="cartamount">
+						<input type="submit" value="In Winkelwagen">
+					</form>
+				</div>
+				
+				<div id="related-wrapper">
+					<div id="related-text">
+						<p>Gerelateerde producten</P>
+					</div>');
+				
+				// query to get related products
+				$query = "SELECT * FROM product INNER JOIN product_gerelateerd_product ON(product.PRODUCTNUMMER = product_gerelateerd_product.PRODUCTNUMMER) WHERE PRODUCTNUMMER_GERELATEERD_PRODUCT = ".$_GET['id'];
+				
+				// execute the query. 
+				$result = mysqli_query($link, $query); 
+				
+				if (mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_array($result)) { 
+						echo('<div class="productbox">');
+						echo('<div class="productbox-head">');
+						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>');
+						echo('</div>');
+						echo('<div class="productbox-main">');
+						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" ></a>');
+						echo('</div>');
+						echo('<div class="productbox-foot">');
+						echo('<p class="pricetext">€ ' .$row["PRIJS"]. '</p>');
+						echo('<form class="cartbutton" action="#" method="post">');
+						echo('<input type="submit" name="action" value="In Winkelwagen">');
+						echo('</form>');
+						echo('</div>');
+						echo('</div>');
+					} 
+				} else {
+					echo "<p>Dit product heeft geen gerelateerde producten.";
+				}
+					
+				echo('</div>');
+				
+				
 			} else {
 				echo('<P>Dit product bestaat niet of bevindt zich niet langer in ons systeem.</p>');
 			}
@@ -38,79 +82,7 @@
 			echo('<P>Ongeldig product!</p>');
 		}
 	?>
-	<div id="cart">
-		<p>Aantal: </P>
-		<form class="tocart" action="TEST.asp" method="get">
-			<input type="text" name="cartamount">
-			<input type="submit" value="In Winkelwagen">
-		</form>
-	</div>
-	<div id="related-wrapper">
-			<div id="related-text">
-				<p>Gerelateerde producten</P>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.html">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.html"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.html">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.html"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.html">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.html"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-			<div class="productbox">
-				<div class="productbox-head">
-					<a href="./product.html">Super Mario 3D Land</a>
-				</div>
-				<div class="productbox-main">
-					<a href="./product.html"><img src="img/sm3dl.jpg" alt="image" width="200" height="200"></a>
-				</div>
-				<div class="productbox-foot">
-					<p class="pricetext">€ 45.00</p>
-					<form class="cartbutton" action="TEST.asp" method="get">
-						<input type="submit" value="In Winkelwagen">
-					</form>
-				</div>
-			</div>
-			
-	</div>
+
 </div>
 
 <?php 

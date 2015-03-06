@@ -86,7 +86,7 @@
 						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>');
 						echo('</div>');
 						echo('<div class="productbox-main">');
-						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" width="200" height="200"></a>');
+						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" ></a>');
 						echo('</div>');
 						echo('<div class="productbox-foot">');
 						echo('<p class="pricetext">€ ' .$row["PRIJS"]. '</p>');
