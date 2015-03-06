@@ -5,6 +5,7 @@
 - [x] bevestiging voor regisreren.
 - [ ] cart terug button.
 - [ ] unicode fix.
+- [ ] verwijder dummie text (login).
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
