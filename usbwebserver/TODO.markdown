@@ -5,6 +5,7 @@
 - [ ] remember?
 - [x] bevestiging voor regisreren.
 - [ ] cart terug button.
+- [ ] unicode fix.
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
