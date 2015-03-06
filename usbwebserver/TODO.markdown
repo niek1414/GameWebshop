@@ -4,6 +4,7 @@
 - [x] log uit form maken en inpementeren.
 - [ ] remember?
 - [x] bevestiging voor regisreren.
+- [ ] cart terug button.
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
