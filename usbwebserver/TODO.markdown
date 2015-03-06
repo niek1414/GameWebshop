@@ -17,4 +17,4 @@
 - [x] terug button maken
 	- [x] producten informatie printen
 	- [x] gerelateerde producten printen
-- [ ] fix sorter div in webshoppagina (duwt hele pagina naar rechts).
+- [x] fix sorter div in webshoppagina (duwt hele pagina naar rechts).
