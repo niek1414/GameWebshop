@@ -24,6 +24,8 @@
 		
 		// execute the query. 
 		mysqli_query($link, $query); 
+		
+		echo "<script type='text/javascript'>alert('U bent nu registered.')</script>";
 		} else {
 			echo "<script type='text/javascript'>alert('De twee ingevoerde wachtwoorden komen niet overeen.')</script>";
 		}
