@@ -2,7 +2,6 @@
 - [x] login wachtwoordveld in astriks. 
 - [x] login form --> table (ipv div)
 - [x] log uit form maken en inpementeren.
-- [ ] remember?
 - [x] bevestiging voor regisreren.
 - [ ] cart terug button.
 - [ ] unicode fix.
@@ -14,9 +13,8 @@
 	- [x] producten printen op basis van categorieën
 	- [x] resultaten per pagina
 	- [x] zoek functie
-- [ ] productpagina
+- [x] productpagina
 - [x] terug button maken
 	- [x] producten informatie printen
-	- [ ] gerelateerde producten printen
-- [ ] gebruik database voor pagina verwijzing???
+	- [x] gerelateerde producten printen
 - [ ] fix sorter div in webshoppagina (duwt hele pagina naar rechts).
