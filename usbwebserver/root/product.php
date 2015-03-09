@@ -34,9 +34,10 @@
 				
 				echo('<div id="cart">
 					<p>Aantal: </P>
-					<form class="tocart" action="TEST.asp" method="get">
-						<input type="text" name="cartamount">
-						<input type="submit" value="In Winkelwagen">
+					<form class="tocart" action="/cart.php" method="post">
+						<input type="text" name="aantal">
+						<input type="hidden" name="productnummer" value="' .$row["PRODUCTNUMMER"]. '">
+						<input type="submit" name="action" value="In Winkelwagen">
 					</form>
 				</div>
 				

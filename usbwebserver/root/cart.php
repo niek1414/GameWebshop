@@ -1,10 +1,15 @@
 <?php 
 	include('templates/header.php');
+	include('functions/to_cart.php');
+	
+	// connection
+	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
 ?>
 
 <div id="content" class="clearfix">
-<form action="TEST.asp" method="get">
-  <div id="button-head"><button type="submit" name="back">Verder winkelen</button></div>
+
+  <div id="button-head"><button type="submit" name="back" onclick="location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'">Verder winkelen</button></div>
+  <form action="TEST.asp" method="get">
   <div class="content-title content-title-cart">Winkelwagen</div>
 		<table class="full-table">
 			<tr class="bordercollapse">
@@ -27,6 +32,19 @@
 					<p>Verwijderen</p>
 				</td>
 			</tr>
+            <?php
+			foreach ($_SESSION['cartItems'] as $item => $amount){
+				// query to get categories
+				$query = "SELECT * FROM product WHERE PRODUCTNUMMER = " .$item or die("Error in the query.." . mysqli_error($link)); 
+			
+				//execute the query. 
+				$result = mysqli_query($link, $query);
+				
+				$row = mysqli_fetch_array($result);
+				
+				echo(' '.$row['PRODUCTNAAM'].':'.$amount.' ');
+			}
+			?>
 			<tr class="bordercollapse">
 				<th class="bordercollapse">
 					<img src="img/sm3dl.jpg" width="200" height="200" alt="Product image">

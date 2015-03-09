@@ -90,8 +90,9 @@
 						echo('</div>');
 						echo('<div class="productbox-foot">');
 						echo('<p class="pricetext">€ ' .$row["PRIJS"]. '</p>');
-						echo('<form class="cartbutton" action="#" method="post">');
-						echo('<input type="submit" name="action" value="In Winkelwagen">');
+						echo('<form class="cartbutton" action="/cart.php" method="post">');
+						echo('<input type="hidden" name="productnummer" value="' .$row["PRODUCTNUMMER"]. '">');
+						echo('<input type="submit" name="action" value="In winkelwagen">');
 						echo('</form>');
 						echo('</div>');
 						echo('</div>');
