@@ -7,12 +7,12 @@
 - [x] unicode fix.
 - [x] verwijder dummie text (login).
 - [ ] valideren.
-- [ ] js uit de terug knoppen
-- [ ] leegbutton verplaatsen
+- [x] js uit de terug knoppen
+- [x] leegbutton verplaatsen
 - [x] na kopen van vooraad afschrijven
 - [x] vooraat ja/nee
 - [ ] moet ingelogd zijn om af te rekenen
-- [ ] image --> afbeelding
+- [x] image --> afbeelding
 - [ ] table border th
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
