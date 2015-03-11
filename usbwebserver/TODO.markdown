@@ -11,6 +11,7 @@
 - [ ] leegbutton verplaatsen
 - [x] na kopen van vooraad afschrijven
 - [ ] vooraat ja/nee
+- [ ] moet ingelogd zijn om af te rekenen
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
 	- [x] categorieën uitput
