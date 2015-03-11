@@ -21,13 +21,12 @@
 			'" . mysqli_real_escape_string($link, $_POST['sexe']) . "',
 			'" . md5(mysqli_real_escape_string($link, $_POST['password'])) . "')"
 			or die("Error in the query.." . mysqli_error($link)); 
-		
-		// execute the query. 
-		mysqli_query($link, $query); 
-		
-		echo "<script type='text/javascript'>alert('U bent nu registered.')</script>";
+			
+			// execute the query. 
+			mysqli_query($link, $query); 
+			$err_msg = "U bent succesvol aangemeld.";
 		} else {
-			echo "<script type='text/javascript'>alert('De twee ingevoerde wachtwoorden komen niet overeen.')</script>";
+			$err_msg = "De twee ingevoerde wachtwoorden komen niet overeen.";
 		}
 	}
 ?>

@@ -402,6 +402,12 @@ body {
 		padding-left: 10px;
 	}
 	
+.red {
+	color: #FF6600;
+}
+.green {
+	color: #00CC99;
+}
 
 #cart {
 	float: left;
@@ -515,6 +521,13 @@ body {
 
 .half-table {
 	width: 50%;
+	float: right;
+    border: none;
+	border-collapse: collapse;
+}
+
+.checkout-table {
+	width: 33%;
 	float: right;
     border: none;
 	border-collapse: collapse;

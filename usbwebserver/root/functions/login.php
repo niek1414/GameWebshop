@@ -43,7 +43,7 @@
 					$_SESSION['middlename'] = $data['TUSSENVOEGSEL'];
 					$_SESSION['lastname'] 	= $data['ACHTERNAAM'];
 				} else {
-					echo "<script type='text/javascript'>alert('Login failed!')</script>";
+					$err_msg = "Uw wachtwoord of gebruikersnaam is incorrect. Probeer het A.U.B. opnieuw.";
 				}
 				
 			} break;

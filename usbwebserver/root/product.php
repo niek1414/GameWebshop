@@ -7,7 +7,9 @@
 
 <div id="content" class="clearfix">
 	<div id="back">
-		<input id="back-button" type="button" value="Terug" onclick="location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'">
+    	<form action="webshop.php">
+			<button id="back-button">Terug</button>
+        </form>
 	</div>
     <?php 
 		if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -27,9 +29,20 @@
 				echo('<div id="product-details">');
 				echo('<P>'.utf8_encode($row['OMSCHRIJVING']).'</p>');
 				echo('</div>');
-				echo('<div id="stock">');
-				echo('<p>Voorraad: '.$row['VOORRAAD'].'</P>');
-				echo('</div>');
+				
+				if ($row['VOORRAAD'] > 0) {
+					echo('<div id="stock" class="green">');
+					echo('<p>Op voorraad</P>');
+					echo('<p>(Direct leverbaar)</P>');
+					echo('</div>');
+				} else {
+					echo('<div id="stock" class="red">');
+					echo('<p>Niet op voorraad</P>');
+					echo('<p>(Levertijd verlengd)</P>');
+					echo('</div>');
+				}
+				
+				
 				echo('</div>');
 				
 				echo('<div id="cart">

@@ -8,8 +8,12 @@
 
 <div id="content" class="clearfix">
 
-  <div id="button-head"><button type="submit" name="back" onclick="location.href='<?php echo $_SERVER['HTTP_REFERER']; ?>'">Verder winkelen</button></div>
-  <form action="TEST.asp" method="get">
+  <div id="button-head">
+    <form action="webshop.php">
+        <button>Verder winkelen</button>
+    </form>
+  </div>
+  <form method="post">
   <div class="content-title content-title-cart">Winkelwagen</div>	
 	<?php
         if (isset($_SESSION['cartItems'])){
@@ -17,26 +21,27 @@
                 <table class="full-table">
                     <tr class="bordercollapse">
                         <td class="bordercollapse">
-                            <p>Image</p>
+                            <p>Afbeelding</p>
                         </td>
                         <td class="bordercollapse">
                             <p>Productnaam</p>
                         </td>
-                        <td>
+                        <td class="bordercollapse">
                             <p>Prijs</p>
                         </td>
-                        <td>
+                        <td class="bordercollapse">
                             <p>Aantal</p>
                         </td>
-                        <td>
+                        <td class="bordercollapse">
                             <p>Subtotaal</p>
                         </td>
-                        <td>
+                        <td class="bordercollapse">
                             <p>Verwijderen</p>
                         </td>
                     </tr>
                 ');
                 
+			$subtotal = 0;
             foreach ($_SESSION['cartItems'] as $item => $amount){
                 // query to get categories
                 $query = "SELECT * FROM product WHERE PRODUCTNUMMER = " .$item or die("Error in the query.." . mysqli_error($link)); 
@@ -46,7 +51,6 @@
                 
                 $row = mysqli_fetch_array($result);
                 
-                //echo(' '.$row['PRODUCTNAAM'].':'.$amount.' ');
                 echo('
                     <tr class="bordercollapse">
                         <th class="bordercollapse">
@@ -59,41 +63,59 @@
                             <p>&euro; ' .number_format((float)($row["PRIJS"]), 2, ',', ''). '</p>
                         </th>
                         <th class="bordercollapse">
-                            <input name="'.$item.'" type="text" value="' .$amount. '" size="2" maxlength="2">
+                            <input name = "'.$item.'" type="text" value="' .$amount. '" size="2" maxlength="2">
                         </th>
                         <th class="bordercollapse">
                             <p>&euro; ' .number_format((float)($row["PRIJS"] * $amount), 2, ',', ''). '</p>
                         </th>
                         <th class="bordercollapse">
-                            <button type="submit" name="requery">Verwijderen</button>
+							<button name="action" value="'.$item.'">Verwijderen</button>
                         </th>
                     </tr>
                 ');
+				
+				$subtotal += $row["PRIJS"] * $amount;
             }
+			$shipping = 6.95;
+			$total = $subtotal + $shipping;
             echo('</table>');
 			echo('
 				<div id="content-footer-wrapper">
-					<table class="half-table">
+					<table class="checkout-table">
 						<tr>
-							<td>
-								<button type="submit" name="requery">Herberekenen</button>
-							</td>
 							<td class="bordercollapse">
-								<p>Totaal bedrag:</p>
+								<p>Subtotaal:</p>
 							</td>
 							<th class="bordercollapse">
-								<p>€41,00</p>
+								<p>€ '.number_format((float)$subtotal, 2, ',', '').'</p>
 							</th>
 						</tr>
 						<tr>
-							<th colspan="2">
-							
+							<td class="bordercollapse">
+								<p>Verzendkosten:</p>
+							</td>
+							<th class="bordercollapse">
+								<p>€ '.number_format((float)$shipping, 2, ',', '').'</p>
 							</th>
+						</tr>
+						<tr>
+							<td class="bordercollapse">
+								<p>Totaal:</p>
+							</td>
+							<th class="bordercollapse">
+								<p>€ '.number_format((float)$total, 2, ',', '').'</p>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" name="action" value="Herbereken">
+							</td>
 							<th>
-								<input type="submit" value="Afrekenen">
+								<button name="action" value="checkout">Afrekenen</button>
 							</th>
 						</tr>
 					</table>
+					<button name="action" value="empty">Leeg winkelwagen</button>
 				</div>
 			');
         } else { 

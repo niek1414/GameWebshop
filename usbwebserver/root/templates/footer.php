@@ -13,5 +13,11 @@
 				</div>
 			</div>
 		</div>
+        <?php 
+			// show any error messages
+			if (isset($err_msg)) {
+				echo ('<script type="text/javascript">alert("'.$err_msg.'");</script>');
+			}
+		?>
 	</body>
 </html>
