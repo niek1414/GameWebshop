@@ -12,6 +12,7 @@
 - [x] na kopen van vooraad afschrijven
 - [x] vooraat ja/nee
 - [ ] moet ingelogd zijn om af te rekenen
+- [ ] image --> afbeelding
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
 	- [x] categorieën uitput
