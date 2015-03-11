@@ -11,7 +11,7 @@
 - [x] leegbutton verplaatsen
 - [x] na kopen van vooraad afschrijven
 - [x] vooraat ja/nee
-- [ ] moet ingelogd zijn om af te rekenen
+- [x] moet ingelogd zijn om af te rekenen
 - [ ] vraag docent (rein) of alert mag ivm javascript
 - [x] image --> afbeelding
 - [x] table border th
