@@ -3,9 +3,10 @@
 - [x] login form --> table (ipv div)
 - [x] log uit form maken en inpementeren.
 - [x] bevestiging voor regisreren.
-- [ ] cart terug button.
-- [ ] unicode fix.
-- [ ] verwijder dummie text (login).
+- [x] cart terug button.
+- [x] unicode fix.
+- [x] verwijder dummie text (login).
+- [ ] valideren.
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 - [x] webshop
