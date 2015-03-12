@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<td class="login-first-row">
-						<input type="checkbox" name="remember" value="true"> Onthouden <a href="./forgot.html">Vergeten?</a>                           
+						<input type="checkbox" name="remember" value="true"> Onthouden <a href="./forgot.php">Vergeten?</a>                           
 						
 					</td>
 					<td>

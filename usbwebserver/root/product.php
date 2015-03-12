@@ -1,8 +1,9 @@
 <?php 
+	include('functions/database_functions.php');
 	include('templates/header.php');
 	
 	// connection
-	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
+	$link = database_connect();
 ?>
 
 <div id="content" class="clearfix">
@@ -22,24 +23,30 @@
 			if (mysqli_num_rows($result) == 1) {
 				$row = mysqli_fetch_array($result);
 				
-				echo('<div id="product-wrapper">');
-				echo('<div id="product-image">');
-				echo('<img src="'.$row['AFBEELDING_GROOT'].'" alt="'.$row['PRODUCTNAAM'].'" width="300">');
-				echo('</div>');
-				echo('<div id="product-details">');
-				echo('<P>'.utf8_encode($row['OMSCHRIJVING']).'</p>');
-				echo('</div>');
+				echo('
+					<div id="product-wrapper">
+						<div id="product-image">
+							<img src="'.$row['AFBEELDING_GROOT'].'" alt="'.$row['PRODUCTNAAM'].'" width="300">
+						</div>
+						<div id="product-details">
+							<P>'.utf8_encode($row['OMSCHRIJVING']).'</p>
+						</div>
+				');
 				
 				if ($row['VOORRAAD'] > 0) {
-					echo('<div id="stock" class="green">');
-					echo('<p>Op voorraad</P>');
-					echo('<p>(Direct leverbaar)</P>');
-					echo('</div>');
+					echo('
+						<div id="stock" class="green">
+							<p>Op voorraad</P>
+							<p>(Direct leverbaar)</P>
+						</div>
+					');
 				} else {
-					echo('<div id="stock" class="red">');
-					echo('<p>Niet op voorraad</P>');
-					echo('<p>(Levertijd verlengd)</P>');
-					echo('</div>');
+					echo('
+						<div id="stock" class="red">
+							<p>Niet op voorraad</P>
+							<p>(Levertijd verlengd)</P>
+						</div>
+					');
 				}
 				
 				
@@ -48,7 +55,7 @@
 				echo('<div id="cart">
 					<p>Aantal: </P>
 					<form class="tocart" action="/cart.php" method="post">
-						<input type="text" name="aantal">
+						<input type="text" name="aantal" maxlength="2">
 						<input type="hidden" name="productnummer" value="' .$row["PRODUCTNUMMER"]. '">
 						<input type="submit" name="action" value="In Winkelwagen">
 					</form>
@@ -67,20 +74,22 @@
 				
 				if (mysqli_num_rows($result) > 0) {
 					while($row = mysqli_fetch_array($result)) { 
-						echo('<div class="productbox">');
-						echo('<div class="productbox-head">');
-						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>');
-						echo('</div>');
-						echo('<div class="productbox-main">');
-						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" ></a>');
-						echo('</div>');
-						echo('<div class="productbox-foot">');
-						echo('<p class="pricetext">€ ' .$row["PRIJS"]. '</p>');
-						echo('<form class="cartbutton" action="#" method="post">');
-						echo('<input type="submit" name="action" value="In Winkelwagen">');
-						echo('</form>');
-						echo('</div>');
-						echo('</div>');
+						echo('
+							<div class="productbox">
+								<div class="productbox-head">
+									<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>
+								</div>
+								<div class="productbox-main">
+									<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" ></a>
+								</div>
+								<div class="productbox-foot">
+									<p class="pricetext">€ ' .$row["PRIJS"]. '</p>
+									<form class="cartbutton" action="#" method="post">
+										<input type="submit" name="action" value="In Winkelwagen">
+									</form>
+								</div>
+							</div>
+						');
 					} 
 				} else {
 					echo "<p>Dit product heeft geen gerelateerde producten.";

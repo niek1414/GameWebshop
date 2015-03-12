@@ -3,7 +3,8 @@
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'Aanmelden') {
 		//check if password equals second password
 		
-		$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
+		// connection
+		$link = database_connect();
 		
 		if(mysqli_real_escape_string($link, $_POST['password']) == mysqli_real_escape_string($link, $_POST['sec_password'])) {
 				
@@ -25,6 +26,8 @@
 			// execute the query. 
 			mysqli_query($link, $query); 
 			$err_msg = "U bent succesvol aangemeld.";
+			
+			mysqli_close($link);
 		} else {
 			$err_msg = "De twee ingevoerde wachtwoorden komen niet overeen.";
 		}

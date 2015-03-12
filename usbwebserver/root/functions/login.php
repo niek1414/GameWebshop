@@ -2,16 +2,7 @@
 	session_start();
 	
 	// loading a page
-	if($_SERVER['REQUEST_METHOD'] == 'GET') {
-		// check session
-		/*
-		if (isset($_SESSION['loggedIn'])) {
-			echo "Logged in";
-			echo '<br>Username: ' . $_SESSION['username'];
-		} else {
-			echo "Not logged in";
-		}*/
-	} else {
+	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		switch($_POST['action']) {
 			case 'Log in': {
 				
@@ -19,7 +10,7 @@
 				$password = md5($_POST['password']);
 				
 				// connection
-				$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
+				$link = database_connect();
 				
 				// query
 				$query = "SELECT * FROM gebruiker
@@ -46,6 +37,8 @@
 					$err_msg = "Uw wachtwoord of gebruikersnaam is incorrect. Probeer het A.U.B. opnieuw.";
 				}
 				
+				mysqli_close($link);
+				
 			} break;
 			case 'Log uit': {
 				unset($_SESSION['loggedIn']);
@@ -54,19 +47,7 @@
 				unset($_SESSION['firstname']);
 				unset($_SESSION['middlename']);
 				unset($_SESSION['lastname']);
-				//session_unset();
-				//session_destroy();
-				//echo "Just logged out";
 			} break;
 		}
 	}
-	
-	/* notes 
-	
-	//display information: 
-	while($row = mysqli_fetch_array($result)) { 
-		echo $row["GEBRUIKERSNAAM"] . "<br>"; 
-	}
-	
-	  end notes */
 ?>

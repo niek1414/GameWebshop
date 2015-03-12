@@ -1,16 +1,22 @@
 <?php
-	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link));
+	// global variables
+	$total = 0;
+	$subtotal = 0;
+	$shipping = 6.95;
+
+	// connection
+	$link = database_connect();
 
 	//check POST and productnummer exists and is numeric.
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		
+		//check if current session cartItems
+		if (!isset($_SESSION['cartItems'])){
+			$_SESSION['cartItems'] = array();
+		}
+			
 		// add items to cart
 		if(isset($_POST['productnummer']) && is_numeric($_POST['productnummer'])){
-			
-			//check if current session cartItems
-			if (!isset($_SESSION['cartItems'])){
-				$_SESSION['cartItems'] = array();
-			}
 			
 			//check if product already is in cart
 			if (isset($_SESSION['cartItems'][$_POST['productnummer']])){
@@ -66,4 +72,6 @@
 		}
 		
 	}
+	
+	mysqli_close($link);
 ?>

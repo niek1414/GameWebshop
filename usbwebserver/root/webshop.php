@@ -1,8 +1,9 @@
 <?php 
+	include('functions/database_functions.php');
 	include('templates/header.php');
 	
 	// connection
-	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
+	$link = database_connect();
 ?>
 
 <div id="content" class="clearfix">
@@ -57,6 +58,7 @@
 				$result = mysqli_query($link, $query); 
 				
 				if (mysqli_num_rows($result) > 0) {
+					
 					// sorter
 					echo('<div id="sorter">');
 					echo('<p>'.mysqli_num_rows($result).' Producten | toon</p>');
@@ -68,34 +70,38 @@
 					if (isset($_GET['search']) && mysqli_real_escape_string($link, $_GET['search'])) {
 						echo('<input type="hidden" name ="search" value="' .$_GET['search']. '">');
 					}
-					echo('<select name="sort">');
-					echo('<option value="3">3</option>');
-					echo('<option value="50">50</option>');
-					echo('<option value="100">100</option>');
-					echo('<option value="200">200</option>');
-					echo('</select>');
-					echo('<p>per pagina</p>');
-					echo('<input type="submit" value="Toon">');
-					echo('</form>');
-					echo('</div>');
+					echo('
+								<select name="sort">
+									<option value="3">3</option>
+									<option value="50">50</option>
+									<option value="100">100</option>
+									<option value="200">200</option>
+								</select>
+								<p>per pagina</p>
+								<input type="submit" value="Toon">
+							</form>
+						</div>
+					');
 					
 					// productboxes
 					while($row = mysqli_fetch_array($result)) { 
-						echo('<div class="productbox">');
-						echo('<div class="productbox-head">');
-						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>');
-						echo('</div>');
-						echo('<div class="productbox-main">');
-						echo('<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" ></a>');
-						echo('</div>');
-						echo('<div class="productbox-foot">');
-						echo('<p class="pricetext">€ ' .$row["PRIJS"]. '</p>');
-						echo('<form class="cartbutton" action="/cart.php" method="post">');
-						echo('<input type="hidden" name="productnummer" value="' .$row["PRODUCTNUMMER"]. '">');
-						echo('<input type="submit" name="action" value="In winkelwagen">');
-						echo('</form>');
-						echo('</div>');
-						echo('</div>');
+						echo('
+							<div class="productbox">
+								<div class="productbox-head">
+									<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '">' .$row["PRODUCTNAAM"]. '</a>
+								</div>
+								<div class="productbox-main">
+									<a href="./product.php?id=' .$row["PRODUCTNUMMER"]. '"><img src="' .$row["AFBEELDING_KLEIN"]. '" alt="image" ></a>
+								</div>
+								<div class="productbox-foot">
+									<p class="pricetext">€ ' .$row["PRIJS"]. '</p>
+									<form class="cartbutton" action="/cart.php" method="post">
+										<input type="hidden" name="productnummer" value="' .$row["PRODUCTNUMMER"]. '">
+										<input type="submit" name="action" value="In winkelwagen">
+									</form>
+								</div>
+							</div>
+						');
 					}
 				} else {
 					echo('<p>Deze categorie is leeg.<p>');

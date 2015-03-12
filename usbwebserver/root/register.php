@@ -1,4 +1,5 @@
 <?php 
+	include('functions/database_functions.php');
 	include('templates/header.php');
 	include('functions/sign_up.php');
 ?>
@@ -118,7 +119,7 @@
 								
 							</td>
 							<td class="register-text-normal">
-								<input name="house_number" type="nummer" size="10" required>
+								<input name="house_number" type="text" size="10" required>
 							</td>
 						</tr>
 						<tr>

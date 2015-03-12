@@ -1,9 +1,10 @@
 <?php 
+	include('functions/database_functions.php');
 	include('templates/header.php');
 	include('functions/to_cart.php');
 	
 	// connection
-	$link = mysqli_connect("localhost","root","usbw","webshop") or die("Error " . mysqli_error($link)); 
+	$link = database_connect();
 ?>
 
 <div id="content" class="clearfix">
@@ -16,6 +17,7 @@
   <form method="post">
   <div class="content-title content-title-cart">Winkelwagen</div>	
 	<?php
+		// output cart table head if session has cart items
         if (isset($_SESSION['cartItems'])){
             echo('
                 <table class="full-table">
@@ -40,8 +42,8 @@
                         </td>
                     </tr>
                 ');
-                
-			$subtotal = 0;
+				
+			// loop through all cart items in session and output html table
             foreach ($_SESSION['cartItems'] as $item => $amount){
                 // query to get categories
                 $query = "SELECT * FROM product WHERE PRODUCTNUMMER = " .$item or die("Error in the query.." . mysqli_error($link)); 
@@ -49,8 +51,10 @@
                 //execute the query. 
                 $result = mysqli_query($link, $query);
                 
+				// put result in variable
                 $row = mysqli_fetch_array($result);
                 
+				// output product
                 echo('
                     <tr class="bordercollapse">
                         <th class="bordercollapse">
@@ -76,8 +80,10 @@
 				
 				$subtotal += $row["PRIJS"] * $amount;
             }
-			$shipping = 6.95;
+			
 			$total = $subtotal + $shipping;
+			
+			// output checkout table
             echo('</table>');
 			echo('
 				<div id="content-footer-wrapper">
@@ -122,10 +128,10 @@
             echo ('Uw winkelwagen is leeg.');
         }
 	?>
-		
 	</form>
 </div>
 
 <?php 
+	mysqli_close($link);
 	include('templates/footer.php');
 ?>
