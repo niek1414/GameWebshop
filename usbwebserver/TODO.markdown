@@ -6,14 +6,14 @@
 - [x] cart terug button.
 - [x] unicode fix.
 - [x] verwijder dummie text (login).
-- [ ] valideren.
+- [x] valideren.
 - [x] js uit de terug knoppen
 - [x] leegbutton verplaatsen
 - [x] na kopen van vooraad afschrijven
 - [x] vooraat ja/nee
 - [x] moet ingelogd zijn om af te rekenen
-- [ ] vraag docent (rein) of alert mag ivm javascript
-- [ ] include's in php voledig
+- [x] vraag docent (rein) of alert mag ivm javascript
+- [x] include's in php voledig
 - [x] image --> afbeelding
 - [x] table border th
 - [x] webshop
@@ -27,7 +27,8 @@
 	- [x] producten informatie printen
 	- [x] gerelateerde producten printen
 - [x] fix sorter div in webshoppagina (duwt hele pagina naar rechts).
-
+- [ ] stop alle php code boven in de pagina (liefst met incl.)
+- [ ] functions aanmaken
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 ![alt text](https://avatars0.githubusercontent.com/u/11294766?v=3&s=40)
