@@ -13,6 +13,7 @@
 - [x] vooraat ja/nee
 - [x] moet ingelogd zijn om af te rekenen
 - [ ] vraag docent (rein) of alert mag ivm javascript
+- [ ] include's in php voledig
 - [x] image --> afbeelding
 - [x] table border th
 - [x] webshop
