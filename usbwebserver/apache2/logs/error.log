@@ -1,13 +1,5 @@
-[Wed Mar 11 14:37:59.773601 2015] [mpm_winnt:notice] [pid 1688:tid 528] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Wed Mar 11 14:37:59.773601 2015] [mpm_winnt:notice] [pid 1688:tid 528] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Wed Mar 11 14:37:59.773601 2015] [core:notice] [pid 1688:tid 528] AH00094: Command line: 'C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/Erwin/Documents/GitHub/GameWebshop/usbwebserver/apache2'
-[Wed Mar 11 14:37:59.773601 2015] [mpm_winnt:notice] [pid 1688:tid 528] AH00418: Parent: Created child process 5592
-[Wed Mar 11 14:38:00.803828 2015] [mpm_winnt:notice] [pid 5592:tid 580] AH00354: Child: Starting 64 worker threads.
-[Wed Mar 11 14:48:39.872527 2015] [:error] [pid 5592:tid 1068] [client ::1:60551] PHP Notice:  Undefined index: HTTP_REFERER in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\product.php on line 10
-[Wed Mar 11 14:48:49.586201 2015] [:error] [pid 5592:tid 1068] [client ::1:60554] PHP Notice:  Undefined index: HTTP_REFERER in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\product.php on line 10
-[Wed Mar 11 14:48:56.301234 2015] [:error] [pid 5592:tid 1068] [client ::1:60556] PHP Notice:  Undefined index: HTTP_REFERER in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\product.php on line 10
-[Wed Mar 11 14:56:06.603222 2015] [:error] [pid 5592:tid 1056] [client ::1:60633] PHP Notice:  Undefined index: HTTP_REFERER in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\product.php on line 10
-[Wed Mar 11 14:56:15.103056 2015] [:error] [pid 5592:tid 1056] [client ::1:60635] PHP Notice:  Undefined index: HTTP_REFERER in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\product.php on line 10
-[Wed Mar 11 15:16:01.722031 2015] [:error] [pid 5592:tid 1068] [client ::1:60796] PHP Notice:  Undefined index: HTTP_REFERER in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\cart.php on line 11
-[Wed Mar 11 16:17:57.362190 2015] [:error] [pid 5592:tid 1068] [client ::1:61306] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\webshop.php:86) in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\functions\\login.php on line 2, referer: http://localhost:8080/cart.php
-[Wed Mar 11 16:17:58.815495 2015] [:error] [pid 5592:tid 1068] [client ::1:61306] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\cart.php:120) in C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver\\root\\functions\\login.php on line 2, referer: http://localhost:8080/webshop.php?
+[Wed Mar 11 16:34:43.929884 2015] [mpm_winnt:notice] [pid 14452:tid 544] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Wed Mar 11 16:34:43.930885 2015] [mpm_winnt:notice] [pid 14452:tid 544] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Wed Mar 11 16:34:43.930885 2015] [core:notice] [pid 14452:tid 544] AH00094: Command line: 'C:\\Users\\NK\\Documents\\GitHub\\GameWebshop\\usbwebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/NK/Documents/GitHub/GameWebshop/usbwebserver/apache2'
+[Wed Mar 11 16:34:43.942901 2015] [mpm_winnt:notice] [pid 14452:tid 544] AH00418: Parent: Created child process 2748
+[Wed Mar 11 16:34:45.277592 2015] [mpm_winnt:notice] [pid 2748:tid 564] AH00354: Child: Starting 64 worker threads.
