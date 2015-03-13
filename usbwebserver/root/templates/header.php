@@ -17,7 +17,7 @@
 					</div>
 					<div id="login">
 					<div id="login-wrapper">
-						<form action="#" method="post">
+						<form method="post">
                             <?php
 								include('templates/login_form.php')
 							?>
