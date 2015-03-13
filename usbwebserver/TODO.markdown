@@ -27,8 +27,10 @@
 	- [x] producten informatie printen
 	- [x] gerelateerde producten printen
 - [x] fix sorter div in webshoppagina (duwt hele pagina naar rechts).
-- [ ] stop alle php code boven in de pagina (liefst met incl.)
-- [ ] functions aanmaken
+- [x] stop alle php code boven in de pagina (liefst met incl.)
+- [x] functions aanmaken
+- [ ] inlog real string escape
+- [ ] del inlog #
 
 ![alt text](https://avatars1.githubusercontent.com/u/11294762?v=3&s=64)
 ![alt text](https://avatars0.githubusercontent.com/u/11294766?v=3&s=40)
