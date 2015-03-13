@@ -1,5 +1,5 @@
-[Fri Mar 13 13:31:55.691742 2015] [mpm_winnt:notice] [pid 6604:tid 536] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Fri Mar 13 13:31:55.691742 2015] [mpm_winnt:notice] [pid 6604:tid 536] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Fri Mar 13 13:31:55.691742 2015] [core:notice] [pid 6604:tid 536] AH00094: Command line: 'C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/Erwin/Documents/GitHub/GameWebshop/usbwebserver/apache2'
-[Fri Mar 13 13:31:55.691742 2015] [mpm_winnt:notice] [pid 6604:tid 536] AH00418: Parent: Created child process 7276
-[Fri Mar 13 13:31:56.082366 2015] [mpm_winnt:notice] [pid 7276:tid 524] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 13 13:39:39.389049 2015] [mpm_winnt:notice] [pid 4336:tid 544] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Fri Mar 13 13:39:39.389049 2015] [mpm_winnt:notice] [pid 4336:tid 544] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Fri Mar 13 13:39:39.389049 2015] [core:notice] [pid 4336:tid 544] AH00094: Command line: 'C:\\Users\\Erwin\\Documents\\GitHub\\GameWebshop\\usbwebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/Erwin/Documents/GitHub/GameWebshop/usbwebserver/apache2'
+[Fri Mar 13 13:39:39.389049 2015] [mpm_winnt:notice] [pid 4336:tid 544] AH00418: Parent: Created child process 4476
+[Fri Mar 13 13:39:39.726329 2015] [mpm_winnt:notice] [pid 4476:tid 524] AH00354: Child: Starting 64 worker threads.
