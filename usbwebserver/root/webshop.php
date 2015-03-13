@@ -43,11 +43,11 @@
 				if (isset($_GET['cat']) && is_numeric($_GET['cat'])) {
 					$query .= "WHERE CATEGORIE = " .$_GET['cat']. " ";
 				}
-				if (isset($_GET['search']) && mysqli_real_escape_string($link, $_GET['search'])) {
+				if (isset($_GET['search'])) {
 					if (isset($_GET['cat'])) {
-						$query .= "AND PRODUCTNAAM LIKE '%" .$_GET['search']. "%' ";
+						$query .= "AND PRODUCTNAAM LIKE '%" .mysqli_real_escape_string($link, $_GET['search']). "%' ";
 					} else {
-						$query .= "WHERE PRODUCTNAAM LIKE '%" .$_GET['search']. "%' ";
+						$query .= "WHERE PRODUCTNAAM LIKE '%" .mysqli_real_escape_string($link, $_GET['search']). "%' ";
 					}
 				}
 				if (isset($_GET['sort']) && is_numeric($_GET['sort'])) {
@@ -67,8 +67,8 @@
 					if (isset($_GET['cat']) && is_numeric($_GET['cat'])) {
 						echo('<input type="hidden" name ="cat" value="' .$_GET['cat']. '">');
 					}
-					if (isset($_GET['search']) && mysqli_real_escape_string($link, $_GET['search'])) {
-						echo('<input type="hidden" name ="search" value="' .$_GET['search']. '">');
+					if (isset($_GET['search'])) {
+						echo('<input type="hidden" name ="search" value="' .mysqli_real_escape_string($link, $_GET['search']). '">');
 					}
 					echo('
 								<select name="sort">

@@ -6,11 +6,11 @@
 		switch($_POST['action']) {
 			case 'Log in': {
 				
-				$username = $_POST['username'];
-				$password = md5($_POST['password']);
-				
 				// connection
 				$link = database_connect();
+				
+				$username = mysqli_real_escape_string($link, $_POST['username']);
+				$password = mysqli_real_escape_string($link, md5($_POST['password']));
 				
 				// query
 				$query = "SELECT * FROM gebruiker
