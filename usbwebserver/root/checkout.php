@@ -1,4 +1,5 @@
 <?php 
+	include('functions/database_functions.php');
 	include('templates/header.php');
 ?>
 
